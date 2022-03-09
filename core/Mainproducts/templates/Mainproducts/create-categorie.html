@@ -1,0 +1,17 @@
+{% extends 'basic.html' %}
+
+{% block title %}
+Create-Categorie
+{% endblock title %}
+{% block body %}
+    
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Submit">
+    </form>
+    <script>
+        const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+        console.log(csrftoken)
+    </script>
+{% endblock body %}

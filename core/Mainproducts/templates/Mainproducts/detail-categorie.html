@@ -1,0 +1,11 @@
+{% extends 'basic.html' %}
+
+{% block title %}
+Details-Categorie
+{% endblock title %}
+{% block body %}
+   <h3>{{categorie.name_category}}</h3> 
+   <li>{{categorie.products.name}}</li>
+   <li>Created : {{categorie.created_at}}</li>
+   <li>Updated : {{categorie.updated_at}}</li>
+{% endblock body %}

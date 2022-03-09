@@ -1,0 +1,33 @@
+{% extends 'basic.html' %}
+
+{% block title %}
+Home
+{% endblock title %}
+
+{% block body %}
+    <div class="container">
+        <h3>Links :</h3>
+    <li><a href="{% url 'create-product' %}">create product</a></li> 
+    <li><a href="{% url 'create-categorie' %}">create categorie</a></li> 
+    <br>
+    <h3>Products :</h3>
+    {% for product in products %}
+        {{product}} - <a href="{% url 'update-product' product.id %}">Update</a> - <a href="{% url 'detail-product' product.id %}">Details</a> - <a href="{% url 'delete-product' product.id %}">Delete</a> <br>
+    {% empty %}
+    No product in BDD
+    {% endfor %}
+    <br>
+    <h3>Categories :</h3>
+    {% for categorie in categories %}
+    {{categorie}} - <a href="{% url 'update-categorie' categorie.id %}">Update</a> - <a href="{% url 'detail-categorie' categorie.id %}">Details</a> - <a href="{% url 'delete-categorie' categorie.id %}">Delete</a> <br> 
+    {% empty %}
+    No Categorie in BD
+    {% endfor %}
+    </div>
+    <div>
+        <h3>All Categorie</h3>
+        {% for categorie in categories %}
+            <li><a href="{% url 'home' %}?categorie={{categorie.name_category}}">{{categorie.name_category}}</a></li>
+        {% endfor %}
+    </div>
+{% endblock body %}

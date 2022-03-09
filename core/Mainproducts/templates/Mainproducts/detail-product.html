@@ -1,0 +1,14 @@
+{% extends 'basic.html' %}
+
+{% block title %}
+Details-Product
+{% endblock title %}
+{% block body %}
+    <h3>{{product.name}}</h3>
+    <p>{{product.label}}</p>
+    <li>Prix : {{product.prix}}</li>
+    <li>Quantite : {{product.quanities}}</li>
+    <li>Created : {{product.created_at}}</li>
+    <li>Updated : {{product.updated_at}}</li>
+    <li>Categorie : {{product.categorie.name_category}}</li>
+{% endblock body %}
